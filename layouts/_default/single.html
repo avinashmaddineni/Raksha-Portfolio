@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.result }}<p><strong>Result:</strong> {{ . }}</p>{{ end }}
+  <article>
+    {{ .Content }}
+  </article>
+  {{ with .Params.tools }}
+  <p>Tools:
+    {{ range $i, $t := . }}{{ if $i }}, {{ end }}{{ $t }}{{ end }}
+  </p>
+  {{ end }}
+  <p><a href="/">← Back to Home</a></p>
+{{ end }}

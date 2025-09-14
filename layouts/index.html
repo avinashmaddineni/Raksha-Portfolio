@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h2>Welcome 👋</h2>
+  <p>This is Raksha’s portfolio. We’ll add proper design soon — for now, this confirms Hugo works.</p>
+
+  <h3>Featured Projects</h3>
+  <ul>
+    {{ range first 5 (where .Site.RegularPages "Section" "projects") }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Params.result }}</li>
+    {{ else }}
+      <li>No projects yet. We’ll add one next.</li>
+    {{ end }}
+  </ul>
+{{ end }}
