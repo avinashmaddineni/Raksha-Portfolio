@@ -1,13 +1,44 @@
 {{ define "main" }}
-  <h2>Welcome 👋</h2>
-  <p>This is Raksha’s portfolio. We’ll add proper design soon — for now, this confirms Hugo works.</p>
+<main class="container">
+  <section class="hero" style="padding:72px 0 40px; display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center">
+    <div>
+      <span class="btn primary" style="border-radius:999px">OPEN TO OPPORTUNITIES</span>
+      <h1 style="font-family:'Playfair Display',serif; font-size:clamp(36px,5vw,56px); line-height:1.1; margin:12px 0">
+        Hi, I'm <span style="color:var(--brand2)">Raksha</span> — <span style="color:var(--brand)">TAGLINE</span>
+      </h1>
+      <p style="color:var(--muted); font-size:18px; margin:0 0 22px">
+        One crisp sentence about what she does and who she helps.
+      </p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px">
+        <a class="btn primary" href="/contact/">Contact</a>
+        <a class="btn" href="#work">See Projects</a>
+      </div>
+    </div>
+    <div>
+      <figure style="border-radius:16px; overflow:hidden; border:1px solid var(--border)">
+        <img src="/images/headshot.jpg" alt="Raksha headshot" />
+      </figure>
+    </div>
+  </section>
 
-  <h3>Featured Projects</h3>
-  <ul>
-    {{ range first 5 (where .Site.RegularPages "Section" "projects") }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Params.result }}</li>
-    {{ else }}
-      <li>No projects yet. We’ll add one next.</li>
-    {{ end }}
-  </ul>
+  <section id="work">
+    <h2 class="section-title">Featured Work</h2>
+    <p class="section-sub">2–4 case studies with outcomes.</p>
+    <div class="grid">
+      {{ range first 6 (where .Site.RegularPages "Section" "projects") }}
+        <article class="card">
+          {{ with .Params.cover }}<img src="{{ . }}" alt="{{ $.Title }} cover" />{{ end }}
+          <h3 style="margin:12px 0">{{ .Title }}</h3>
+          {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+          {{ with .Params.result }}<p><strong>Result:</strong> {{ . }}</p>{{ end }}
+          <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap">
+            {{ range .Params.tools }}<span class="tag">{{ . }}</span>{{ end }}
+          </div>
+          <a class="btn" style="margin-top:12px" href="{{ .RelPermalink }}">Read case</a>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+</main>
 {{ end }}
+
