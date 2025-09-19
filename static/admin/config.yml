@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway   # Netlify Identity + Git Gateway
+  branch: main        # your default branch
+
+media_folder: "static/images"  # where images are stored in the repo
+public_folder: "/images"       # how images are referenced in the site
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - name: "contact"
+        label: "Contact"
+        file: "content/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+          - { label: "GitHub", name: "github", widget: "string", required: false }
+          - { label: "Resume URL", name: "resume", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Result", name: "result", widget: "string", required: false }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+      - { label: "Tools (tags)", name: "tools", widget: "list", default: [] }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
