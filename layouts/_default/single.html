@@ -1,19 +1,10 @@
 {{ define "main" }}
 <main class="container">
-  <section>
+  <section style="padding:56px 0">
     <h1 class="section-title">{{ .Title }}</h1>
-    {{ with .Params.result }}<p class="section-sub"><strong>Result:</strong> {{ . }}</p>{{ end }}
-    {{ with .Params.cover }}<p><img src="{{ . }}" alt="{{ $.Title }} cover"></p>{{ end }}
-    <article class="card" style="margin-top:16px">
+    <article>
       {{ .Content }}
     </article>
-    {{ with .Params.tools }}
-      <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap">
-        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
-      </div>
-    {{ end }}
-    <p style="margin-top:16px"><a class="btn" href="/">← Back to Home</a></p>
   </section>
 </main>
 {{ end }}
-
