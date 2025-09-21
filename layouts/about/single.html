@@ -4,7 +4,11 @@
     <div>
       <h1 class="section-title">{{ .Title }}</h1>
       <article>
-        {{ .Content }}
+        {{ if .Content }}
+          {{ .Content }}
+        {{ else }}
+          <p style="color:crimson">DEBUG: No body content found for this page.</p>
+        {{ end }}
       </article>
     </div>
     <div>
