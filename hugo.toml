@@ -3,6 +3,4 @@ languageCode = "en-us"
 title = "Raksha — Portfolio"
 enableRobotsTXT = true
 
-[params]
-  description = "Portfolio of Raksha — short tagline."
 
