@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-email: "raksha.balakrishna@gmail.com.com"
+email: "raksha.balakrishna@gmail.com"
 linkedin: "https://www.linkedin.com/in/raksha-balakrishna/"
 #twitter: "https://twitter.com/yourhandle"
 # Optional extras:
