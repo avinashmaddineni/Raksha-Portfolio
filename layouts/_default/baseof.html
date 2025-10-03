@@ -150,6 +150,21 @@
       .hero{padding:36px 0 !important}
       .about-two-col{padding:36px 0 !important}
     }
+    /* Default desktop sizes */
+    .hero-photo img {
+      max-width: 380px;
+   }
+    .about-photo img {
+      max-width: 400px;
+    }
+
+    /* Mobile override */
+    @media (max-width:480px){
+     .hero-photo img,
+     .about-photo img {
+      max-width: 220px;
+     }
+   }
    
   </style>
 </head>
