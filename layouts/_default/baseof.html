@@ -93,20 +93,35 @@
     .nav-mobile a{ display:block; width:100%; padding:10px 8px; color:var(--text); font-weight:600; border-radius:8px; }
     .nav-mobile a:hover{ background:#f4f2ef; }
 
-    /* --- Responsive tweaks --- */
-  /* --- Responsive tweaks --- */
+  /* HOME hero desktop layout */
+.hero {
+  padding:56px 0;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:28px;
+  align-items:center;
+}
+
+/* ABOUT desktop layout */
+.about-two-col {
+  padding:56px 0;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:28px;
+  align-items:start;
+}
+
+    /* Responsive: stack photo above text on mobile */
 @media (max-width:900px){
-  /* grids */
-  .grid{grid-template-columns:1fr 1fr}
+  .hero {
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-photo { order:-1; margin-bottom:20px; text-align:center; }
+  .hero-text { text-align:center; }
 
-  /* HOME hero: stack + center */
-  .hero{display:grid; grid-template-columns:1fr; text-align:center}
-  .hero-photo{order:-1; margin-bottom:20px}   /* move photo above text */
-  .hero img{max-width:260px}
-
-  /* ABOUT: stack + photo first */
-  .about-two-col{grid-template-columns:1fr}
-  .about-photo{order:-1; text-align:center; margin-bottom:20px}
+  .about-two-col { grid-template-columns:1fr; }
+  .about-photo { order:-1; margin-bottom:20px; text-align:center; }
 }
 
 @media (max-width:768px){
