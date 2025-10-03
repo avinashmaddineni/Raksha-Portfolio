@@ -1,21 +1,16 @@
 {{ define "main" }}
 <main class="container">
-  <section style="padding:56px 0; display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:start">
+  <section class="about-two-col" style="padding:56px 0; display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:start">
     <div>
       <h1 class="section-title">{{ .Title }}</h1>
       <article>
-        {{ if .Content }}
-          {{ .Content }}
-        {{ else }}
-          <p style="color:crimson">DEBUG: No body content found for this page.</p>
-        {{ end }}
+        {{ .Content }}
       </article>
     </div>
     <div>
-      <figure style="border-radius:14px; overflow:hidden; border:1px solid var(--border); background:var(--panel); box-shadow:var(--shadow)">
-        <img src="/images/about-headshot.jpg" alt="Raksha headshot" />
-      </figure>
+      <img src="/images/about-headshot.jpg" alt="Raksha headshot" style="max-width:280px;" />
     </div>
   </section>
 </main>
 {{ end }}
+
