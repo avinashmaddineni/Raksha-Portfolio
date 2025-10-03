@@ -1,24 +1,21 @@
 {{ define "main" }}
-<main class="container">
+<main class="container page-content">
   <section style="padding:56px 0">
     <h1 class="section-title">{{ .Title }}</h1>
 
-    <!-- Download + Open buttons -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin:12px 0 20px">
+    <div class="cv-actions">
       <a class="btn primary" href="/RakshaBalakrishna_CV.pdf" download>Download CV (PDF)</a>
       <a class="btn" href="/RakshaBalakrishna_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
     </div>
 
-    <!-- Embedded CV -->
-    <div style="border:1px solid var(--border); border-radius:14px; background:var(--panel); box-shadow:var(--shadow); overflow:hidden">
-      <object data="/RakshaBalakrishna_CV.pdf#view=FitH" type="application/pdf" width="100%" height="900px">
+    <div class="cv-embed">
+      <object data="/RakshaBalakrishna_CV.pdf#view=FitH" type="application/pdf" width="100%" height="900">
         <iframe src="/RakshaBalakrishna_CV.pdf#view=FitH" style="width:100%; height:900px; border:0"></iframe>
       </object>
     </div>
 
-    <!-- Optional extra text from content file -->
     {{ with .Content }}
-      <article style="margin-top:20px" class="section-sub">
+      <article class="cv-notes" style="margin-top:20px">
         {{ . }}
       </article>
     {{ end }}

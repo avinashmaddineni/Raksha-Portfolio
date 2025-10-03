@@ -1,18 +1,16 @@
 {{ define "main" }}
 <main class="container">
+  <!-- Desktop: text left, photo right; Mobile: photo above text -->
   <section class="about-two-col">
-    <!-- Photo on top -->
     <div class="about-text">
-    <h1 class="section-title">{{ .Title }}</h1>
-    <article>
-      {{ .Content }}
-    </article>
-  </div>
-
-    <!-- Text below -->
+      <h1 class="section-title">{{ .Title }}</h1>
+      <article>
+        {{ .Content }}
+      </article>
+    </div>
     <div class="about-photo">
-    <img src="/images/about-headshot.jpg" alt="Raksha headshot" style="max-width:320px;" />
-  </div>
+      <img src="/images/about-headshot.jpg" alt="Raksha headshot" style="max-width:320px;" />
+    </div>
   </section>
 </main>
 {{ end }}
