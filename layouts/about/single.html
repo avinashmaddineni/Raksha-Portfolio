@@ -1,18 +1,18 @@
 {{ define "main" }}
 <main class="container">
-  <section style="padding:56px 0; display:grid; grid-template-columns: 1fr; gap:20px; align-items:start">
+  <section class="about-two-col" style="padding:56px 0; display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:start">
     <!-- Photo on top -->
-    <div style="display:flex; justify-content:flex-start">
-      <img src="/images/about-headshot.jpg" alt="Raksha headshot" style="max-width:320px;" />
-    </div>
+    <div class="about-text">
+    <h1 class="section-title">{{ .Title }}</h1>
+    <article>
+      {{ .Content }}
+    </article>
+  </div>
 
     <!-- Text below -->
-    <div>
-      <h1 class="section-title">{{ .Title }}</h1>
-      <article>
-        {{ .Content }}
-      </article>
-    </div>
+    <div class="about-photo">
+    <img src="/images/about-headshot.jpg" alt="Raksha headshot" style="max-width:320px;" />
+  </div>
   </section>
 </main>
 {{ end }}

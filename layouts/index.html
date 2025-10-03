@@ -1,20 +1,24 @@
 {{ define "main" }}
 <main class="container">
-  <!-- Hero: photo left, tagline right -->
-  <section class="hero" style="padding:56px 0; display:grid; grid-template-columns: .9fr 1.1fr; gap:28px; align-items:center">
-    <div>
-      <figure style="border-radius:14px; overflow:hidden; border:1px solid var(--border); background:var(--panel); box-shadow:var(--shadow)">
-        <img src="/images/headshot.jpg" alt="Raksha headshot" />
-      </figure>
+  <!-- Hero: photo left, tagline right (desktop) / photo top, text below (mobile) -->
+  <section class="hero" style="padding:56px 0; display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:center">
+    
+    <!-- Photo -->
+    <div class="hero-photo">
+      <img src="/images/headshot.jpg" alt="Raksha headshot" style="max-width:320px;" />
     </div>
-    <div>
+    
+    <!-- Text -->
+    <div class="hero-text">
       <h1 style="font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,48px); line-height:1.15; margin:0 0 10px">
         Raksha Balakrishna
       </h1>
       <p class="section-sub" style="max-width:52ch">
-        PhD Candidate - School of Sustainability and Center for Behavior, Institutions and the Environment (CBIE), Arizona State University
+        PhD Candidate – School of Sustainability and Center for Behavior, Institutions and the Environment (CBIE), Arizona State University
       </p>
     </div>
+  
   </section>
 </main>
 {{ end }}
+
