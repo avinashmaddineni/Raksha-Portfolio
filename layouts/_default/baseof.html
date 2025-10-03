@@ -36,6 +36,11 @@
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{font-weight:800;letter-spacing:.2px}
     .brand strong{font-family:"Playfair Display",serif;font-weight:700;font-size:20px}
+    /* sticky footer layout */
+    html, body { height:100%; }
+    body { display:flex; flex-direction:column; min-height:100vh; }
+    main { flex:1 0 auto; }          /* the page content grows */
+    footer { margin-top:auto; }       /* pushes footer to the bottom when content is short */
 
     /* Desktop nav only */
     .nav-desktop ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
@@ -122,6 +127,12 @@
 
   .about-two-col { grid-template-columns:1fr; }
   .about-photo { order:-1; margin-bottom:20px; text-align:center; }
+
+  .hero-photo img,
+  .about-photo img {
+    margin-left:auto;
+    margin-right:auto;
+  }
 }
 
 @media (max-width:768px){
@@ -137,10 +148,16 @@
   .about-two-col{padding:36px 0 !important}
   .about-two-col img{max-width:220px}
 }
+  /* Default page content should be left-aligned */
+main, section, article { text-align: left; }
 
+/* Keep centering scoped only to hero/about on mobile */
+@media (max-width:900px){
+  .hero, .hero-text { text-align: center; }
+  /* leave other pages alone */
+}
 
-    /* About page — we'll stack image first in its own layout file */
-  </style>
+   </style>
 </head>
 <body>
   <!-- Header -->
