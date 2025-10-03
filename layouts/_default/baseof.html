@@ -11,92 +11,161 @@
 
   <style>
     :root{
-      --bg: #f7f5f2;         /* soft beige background */
-      --panel: #ffffff;      /* cards/nav background */
-      --text: #23262b;       /* main text */
-      --muted: #6b7280;      /* secondary text */
-      --brand: #2f6bff;      /* accent */
-      --brand-2: #00b894;    /* secondary accent (optional) */
-      --border: #e6e2dc;     /* subtle borders */
-      --radius: 14px;
-      --maxw: 1100px;
-      --shadow: 0 8px 20px rgba(0,0,0,.05);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      background:
-        radial-gradient(900px 600px at 10% -10%, rgba(47,107,255,.065), transparent 50%),
-        radial-gradient(900px 600px at 100% 0%, rgba(0,184,148,.06), transparent 50%),
-        var(--bg);
-      color:var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  --bg: #f7f5f2;         /* soft beige background */
+  --panel: #ffffff;      /* cards/nav background */
+  --text: #23262b;       /* main text */
+  --muted: #6b7280;      /* secondary text */
+  --brand: #2f6bff;      /* accent */
+  --brand-2: #00b894;    /* secondary accent (optional) */
+  --border: #e6e2dc;     /* subtle borders */
+  --radius: 14px;
+  --maxw: 1100px;
+  --shadow: 0 8px 20px rgba(0,0,0,.05);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(900px 600px at 10% -10%, rgba(47,107,255,.065), transparent 50%),
+    radial-gradient(900px 600px at 100% 0%, rgba(0,184,148,.06), transparent 50%),
+    var(--bg);
+  color:var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 
-    /* Header (persistent) */
-    header{
-      position:sticky; top:0; z-index:20;
-      background:rgba(255,255,255,.9);
-      backdrop-filter:saturate(180%) blur(8px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{font-weight:800;letter-spacing:.2px}
-    .brand strong{font-family:"Playfair Display",serif;font-weight:700;font-size:20px}
+/* Header (persistent) */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:800;letter-spacing:.2px}
+.brand strong{font-family:"Playfair Display",serif;font-weight:700;font-size:20px}
 
-    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
-    nav a{color:var(--muted);font-weight:600}
-    nav a:hover{color:var(--text)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--border);
-         border-radius:999px;background:var(--panel);box-shadow:var(--shadow)}
-    .btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--brand),#7aa3ff);color:white;font-weight:800;box-shadow:0 8px 18px rgba(47,107,255,.25)}
+/* Base nav styles */
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+nav a{color:var(--muted);font-weight:600}
+nav a:hover{color:var(--text)}
 
-    /* Simple dropdown for Research (optional) */
-    .dropdown{position:relative}
-    .dropdown > a::after{content:"▾";margin-left:6px;font-size:11px}
-    .menu{position:absolute;right:0;top:120%;background:var(--panel);border:1px solid var(--border);
-          border-radius:12px;box-shadow:var(--shadow);padding:8px;display:none;min-width:200px}
-    .menu a{display:block;padding:8px 10px;border-radius:8px}
-    .menu a:hover{background:#f4f2ef}
-    .dropdown:hover .menu{display:block}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--border);
+     border-radius:999px;background:var(--panel);box-shadow:var(--shadow)}
+.btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--brand),#7aa3ff);color:white;font-weight:800;box-shadow:0 8px 18px rgba(47,107,255,.25)}
 
-    main section{padding:56px 0}
-    .section-title{font-size:24px;font-weight:800;margin:0 0 10px}
-    .section-sub{color:var(--muted);margin:0 0 24px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .tag{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted);background:#fff}
+/* Simple dropdown (if used) */
+.dropdown{position:relative}
+.dropdown > a::after{content:"▾";margin-left:6px;font-size:11px}
+.menu{position:absolute;right:0;top:120%;background:var(--panel);border:1px solid var(--border);
+      border-radius:12px;box-shadow:var(--shadow);padding:8px;display:none;min-width:200px}
+.menu a{display:block;padding:8px 10px;border-radius:8px}
+.menu a:hover{background:#f4f2ef}
+.dropdown:hover .menu{display:block}
 
-    footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);margin-top:40px}
-    .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+main section{padding:56px 0}
+.section-title{font-size:24px;font-weight:800;margin:0 0 10px}
+.section-sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.tag{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted);background:#fff}
 
-    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){
-      nav ul{display:none} /* keep header clean on small screens */
-    }
-  </style>
+footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);margin-top:40px}
+.footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* Desktop vs mobile visibility for nav */
+.nav-desktop { display:block; }
+.mobile-toggle { display:none; }
+
+/* Hamburger icon bars */
+.mobile-toggle span{
+  display:block; width:18px; height:2px; background:var(--text); margin:3px 0;
+}
+
+/* Mobile menu panel (hidden by default) */
+.nav-mobile{
+  display:none;
+  background:var(--panel);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  position:relative; width:100%;
+}
+.nav-mobile.open{ display:block; }
+.nav-mobile ul{ list-style:none; margin:0; padding:10px 20px; }
+.nav-mobile li{ border-bottom:1px solid var(--border); }
+.nav-mobile li:last-child{ border-bottom:0; }
+.nav-mobile a{ display:block; padding:14px 0; color:var(--text); font-weight:600; }
+
+/* --- Responsive tweaks --- */
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr 1fr}
+  /* Home hero stack */
+  .hero { display:grid; grid-template-columns:1fr; text-align:left; }
+  .hero img { max-width:260px; }
+}
+@media (max-width:768px){
+  .container { padding:0 16px; }
+  .section-title { font-size:22px; }
+  /* Show burger, hide desktop nav */
+  .nav-desktop { display:none; }
+  .mobile-toggle {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:40px; height:40px;
+    border:1px solid var(--border);
+    border-radius:10px; background:var(--panel); box-shadow:var(--shadow);
+  }
+}
+@media (max-width:480px){
+  .hero { padding:36px 0 !important; }
+  .hero img { max-width:220px; }
+}
+
+/* IMPORTANT: ensure this old rule is REMOVED entirely:
+@media (max-width:640px){ nav ul{display:none} }
+*/
+
+ </style>
 </head>
 <body>
   <!-- Header: Name on left, nav on right, appears on all pages -->
   <header>
-    <div class="container nav">
-      <a class="brand" href="/"><strong>Raksha Balakrishna</strong></a>
-      <nav aria-label="Primary">
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/research/">Research</a></li>
-    <li><a href="/teaching/">Teaching</a></li>
-    <li><a href="/cv/">CV</a></li>   <!-- or link a PDF: <a href="/CV.pdf" target="_blank" rel="noopener">CV</a> -->
-    <li><a href="/contact/">Contact</a></li>
-  </ul>
-</nav>
-    </div>
-  </header>
+  <div class="container nav">
+    <a class="brand" href="/"><strong>Raksha Balakrishna</strong></a>
+
+    <!-- Desktop nav -->
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/teaching/">Teaching</a></li>
+        <li><a href="/cv/">CV</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button class="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile Primary">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/teaching/">Teaching</a></li>
+      <li><a href="/cv/">CV</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   {{ block "main" . }}{{ end }}
 
@@ -118,5 +187,15 @@
       </div>
     </div>
   </footer>
+  <script>
+  const btn = document.querySelector('.mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+</script>
 </body>
 </html>
